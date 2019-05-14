@@ -1,4 +1,6 @@
 <header class="d-flex p-4 bg-light border-bottom align-items-center justify-content-between">
-  <h3 class="m-0">Cocktail Wizard</h3>
+  <%= link_to cocktails_path, class: 'text-decoration-none' do %>
+    <h3 class="m-0 text-dark">Cocktail Wizard</h3>
+  <% end %>
   <%= link_to "Add cocktail", new_cocktail_path, class: 'btn btn-primary' %>
 </header>
