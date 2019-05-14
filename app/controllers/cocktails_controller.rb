@@ -1,6 +1,8 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @regex = Regexp.new(params[:q], "i")
+    @cocktails = Cocktail.where("name LIKE %?%", "#{params[:q]}")
+    raise
   end
 
   def show
