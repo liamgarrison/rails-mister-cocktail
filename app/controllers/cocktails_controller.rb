@@ -1,8 +1,12 @@
 class CocktailsController < ApplicationController
   def index
-    @regex = Regexp.new(params[:q], "i")
-    @cocktails = Cocktail.where("name LIKE %?%", "#{params[:q]}")
-    raise
+    @search_term = params[:q]
+    if @search_term.nil?
+      @cocktails = Cocktail.all
+    else
+      regex = Regexp.new(@search_term, "i")
+      @cocktails = Cocktail.select { |cocktail| cocktail.name.match(regex) }
+    end
   end
 
   def show

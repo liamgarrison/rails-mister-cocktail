@@ -1,5 +1,9 @@
 <div class="container my-5">
-  <h1>All Cocktails</h1>
+  <% if @search_term %>
+    <h1>Search results for "<%= @search_term %>" (<%= @cocktails.length %> results)</h1>
+  <% else %>
+    <h1>All cocktails</h1>
+  <% end %>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
