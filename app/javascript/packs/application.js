@@ -17,3 +17,15 @@
 
 console.log('Hello World from Webpacker')
 import 'bootstrap';
+
+// Select2
+import $ from 'jquery';
+import 'select2';
+
+const initSelect2 = () => {
+  $('.select2').select2(); // (~ document.querySelectorAll)
+};
+
+console.log($('.select2'))
+
+initSelect2();
