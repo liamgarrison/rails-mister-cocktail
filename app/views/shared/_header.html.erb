@@ -2,13 +2,13 @@
   <%= link_to cocktails_path, class: 'text-decoration-none' do %>
     <h3 class="m-0 text-dark">Cocktail Wizard</h3>
   <% end %>
-  <div class="navbar-right">
+  <div class="navbar-right d-flex align-items-center justify-content-between">
     <form class="form-inline d-inline-block" action="/cocktails">
       <div class="form-group">
         <input class="form-control" type="text" name="q" placeholder="Search for cocktails">
-        <input class="ml-3 form-control btn btn-success" type="submit" value="Search">
+        <input class="ml-1 form-control btn btn-success" type="submit" value="Search">
       </div>
     </form>
-    <%= link_to "Add Cocktail", new_cocktail_path, class:'btn btn-outline-primary d-inline-block' %>
+    <%= link_to "Add Cocktail", new_cocktail_path, class:'btn btn-outline-primary d-inline-block ml-3' %>
   </div>
 </header>
