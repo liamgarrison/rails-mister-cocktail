@@ -3,12 +3,12 @@
     <h3 class="m-0 text-dark">Cocktail Wizard</h3>
   <% end %>
   <div class="navbar-right">
-    <form class="form-inline" action="/cocktails">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <form class="form-inline d-inline-block" action="/cocktails">
       <div class="form-group">
         <input class="form-control" type="text" name="q" placeholder="Search for cocktails">
         <input class="ml-3 form-control btn btn-success" type="submit" value="Search">
       </div>
     </form>
+    <%= link_to "Add Cocktail", new_cocktail_path, class:'btn btn-outline-primary d-inline-block' %>
   </div>
 </header>
