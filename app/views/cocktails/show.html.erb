@@ -5,18 +5,26 @@
   </div>
 </div>
 <div class="container my-5">
-  <h2>Ingredients</h2>
-  <ul class="list-group"></ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li class="list-group-item d-flex justify-content-between">
-        <p class="m-0">
-          <strong><%= dose.ingredient.name %>:</strong> <%= dose.description %>
-        </p>
-        <%= link_to dose_path(dose), method: :delete do %>
-          <i class="fas fa-trash-alt"></i>
+  <div class="row">
+    <div class="col-8">
+      <h2>Description</h2>
+      <%= @cocktail.description %>
+    </div>
+    <div class="col-4">
+      <h2>Ingredients</h2>
+      <ul class="list-group"></ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li class="list-group-item d-flex justify-content-between">
+            <p class="m-0">
+              <strong><%= dose.ingredient.name %>:</strong> <%= dose.description %>
+            </p>
+            <%= link_to dose_path(dose), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </li>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
-  <p><%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-3' %></p>
+      </ul>
+      <p><%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary mt-3' %></p>
+    </div>
+  </div>
 </div>
