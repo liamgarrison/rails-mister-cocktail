@@ -9,6 +9,13 @@
     <div class="col-8">
       <h2>Description</h2>
       <%= @cocktail.description %>
+      <h2>Add an review</h2>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.input :stars %>
+        <%= f.input :description %>
+        <%=  %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
     </div>
     <div class="col-4">
       <h2>Ingredients</h2>

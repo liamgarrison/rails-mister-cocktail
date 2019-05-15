@@ -26,6 +26,4 @@ const initSelect2 = () => {
   $('.select2').select2(); // (~ document.querySelectorAll)
 };
 
-console.log($('.select2'))
-
 initSelect2();
