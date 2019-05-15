@@ -6,7 +6,7 @@
 </div>
 <div class="container mb-5">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-md-6">
       <div class="card-show-section">
         <h2>Description</h2>
         <%= @cocktail.description %>
@@ -28,7 +28,7 @@
       </div>
       <div class="card-show-section">
         <h2>Add an review</h2>
-        <%= simple_form_for [@cocktail, @review], html: { class: '' } do |f| %>
+        <%= simple_form_for [@cocktail, @review] do |f| %>
           <%= f.input :stars, label: false, placeholder: 'Number of stars' %>
           <%= f.input :description, label: false, placeholder: 'Write something here'%>
           <%=  %>
@@ -36,7 +36,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-12 col-md-6">
       <div class="card-show-section">
         <h2>Ingredients</h2>
         <ul class="list-group">
@@ -55,7 +55,7 @@
       <div class="card-show-section">
         <h2>Add an ingredient</h2>
         <%= simple_form_for [@cocktail, @dose] do |f| %>
-          <%= f.association :ingredient, input_html: { class: 'select2' } %>
+          <%= f.association :ingredient, input_html: { class: 'select2 form-control' } %>
           <%= f.input :description %>
           <%=  %>
           <%= f.submit "Add", class: "btn btn-primary" %>
